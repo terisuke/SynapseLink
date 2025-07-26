@@ -1,0 +1,47 @@
+# Core Framework
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pydantic==2.10.5
+pydantic-settings==2.7.1
+
+# LangChain
+langchain==0.3.20
+langchain-community==0.3.20
+langchain-google-genai==2.0.14
+langchain-openai==0.2.19
+
+# Database
+sqlalchemy==2.0.36
+alembic==1.14.0
+psycopg2-binary==2.9.10
+redis==5.2.2
+supabase==2.11.6
+
+# Vector Database
+qdrant-client==1.12.2
+
+# AI/ML
+ollama==0.4.14
+openai-whisper==20240124
+numpy==1.26.4
+scipy==1.14.1
+
+# MCP Integration
+playwright==1.50.0
+
+# API Documentation
+python-multipart==0.0.20
+
+# Security
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+python-dotenv==1.0.1
+cryptography==44.0.0
+
+# Monitoring
+prometheus-client==0.21.1
+
+# Utilities
+httpx==0.28.1
+aiofiles==25.0.0
+pyyaml==6.0.2
