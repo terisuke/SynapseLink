@@ -1,53 +1,65 @@
 # SynapseLink Implementation Progress
 
-## Phase 0: Core Functionality Prototyping & Setup
+## 開発方針
+ChatdollKitとバックエンドサーバーを並列で独立開発し、ある程度形になってから接続する。
 
-### Task 0.1: プロジェクト基盤とCI/CDパイプラインの構築
+## Phase 1: バックエンド基盤開発
+
+### Task 1.1: プロジェクト基盤構築
 - [x] Python/FastAPIプロジェクト構造の作成
 - [x] GitHubリポジトリの初期化
 - [x] 基本的な依存関係の定義 (requirements.txt)
-- [x] GitHub Actions CI/CDパイプライン（既存の設定を確認）
-- [x] Docker設定ファイルの作成 ✅
+- [x] GitHub Actions CI/CDパイプライン
+- [x] Docker設定ファイルの作成
 
 **進捗: 100%** ✅
 
-### Task 0.2: 最小限のAPIとUnityクライアントの実装
-- [x] 最小限の/api/v1/conversationエンドポイントの実装 ✅
-- [ ] Unity 2022.3 LTSプロジェクトの作成 ← 次のタスク
-- [ ] Unity最小限のAPIクライアント実装
+### Task 1.2: LangChainエージェント実装
+- [ ] 基本的なLangChainエージェント構造の実装
+- [ ] Gemini APIの統合
+- [ ] 基本的な会話フローの実装
+- [ ] MCPツール（Supabase、Playwright）の準備
 
-**進捗: 33%**
+**進捗: 0%**
 
-### Task 0.3: エンドツーエンドの疎通確認
-- [ ] Unity-Backend間の疎通テスト
+### Task 1.3: データベースとキャッシュ
+- [ ] PostgreSQL/Supabaseのセットアップ
+- [ ] Redisキャッシュの実装
+- [ ] Qdrantベクトルストアの準備
+
+**進捗: 0%**
+
+## Phase 2: Unity/ChatdollKit開発（並列実施）
+
+### Task 2.1: Unity環境構築
+- [ ] Unity 2022.3 LTSプロジェクトの作成
+- [ ] ChatdollKitの導入
+- [ ] VRMサンプルモデルの準備
+
+**進捗: 0%**
+
+### Task 2.2: 基本的なキャラクター実装
+- [ ] VRMキャラクターの表示
+- [ ] 基本的なアニメーション設定
+- [ ] 音声合成（TTS）の準備
+
+**進捗: 0%**
+
+## Phase 3: 統合フェーズ（Phase 1&2完了後）
+
+### Task 3.1: API接続実装
+- [ ] Unity側のAPIクライアント実装
+- [ ] WebSocket接続の実装
+- [ ] エラーハンドリング
 
 **進捗: 0%**
 
 ## 完了した作業
 
-1. **プロジェクト構造の作成**
+1. **プロジェクト基盤**
    - backend/ディレクトリ構造（src/api, agents, tools, models, services）
    - docker/, k8s/, docs/ディレクトリ
-   - Python __init__.pyファイル
-
-2. **開発環境の設定**
-   - Python仮想環境 (venv) のセットアップ
-   - .gitignoreファイルの作成
-   - .env.exampleの作成（全設定項目を含む）
-
-3. **依存関係の定義**
-   - requirements.txt（本番用ライブラリ）
-   - requirements-dev.txt（開発用ツール）
-
-4. **ドキュメント**
-   - README.mdの作成
-   - CLAUDE.mdは事前に作成済み
-   - PROGRESS.mdで進捗管理開始
-
-5. **Git管理**
-   - 初期コミットとプッシュ完了
-
-6. **Docker設定** ✅ NEW
+   - 基本的な設定ファイル
    - backend/Dockerfile（開発・本番用）
    - docker-compose.yml（開発環境用）
    - docker-compose.prod.yml（本番環境用）
